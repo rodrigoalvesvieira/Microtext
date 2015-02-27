@@ -10,6 +10,7 @@
 		EB212C8B1A9FFDB1006F168E /* Microtext.h in Headers */ = {isa = PBXBuildFile; fileRef = EB212C8A1A9FFDB1006F168E /* Microtext.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EB212C911A9FFDB1006F168E /* Microtext.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB212C851A9FFDB1006F168E /* Microtext.framework */; };
 		EB212C981A9FFDB1006F168E /* MicrotextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB212C971A9FFDB1006F168E /* MicrotextTests.swift */; };
+		EB212CA21A9FFDE6006F168E /* Microtext.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB212CA11A9FFDE6006F168E /* Microtext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		EB212C901A9FFDB1006F168E /* MicrotextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MicrotextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB212C961A9FFDB1006F168E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB212C971A9FFDB1006F168E /* MicrotextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrotextTests.swift; sourceTree = "<group>"; };
+		EB212CA11A9FFDE6006F168E /* Microtext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Microtext.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				EB212C8A1A9FFDB1006F168E /* Microtext.h */,
+				EB212CA11A9FFDE6006F168E /* Microtext.swift */,
 				EB212C881A9FFDB1006F168E /* Supporting Files */,
 			);
 			path = Microtext;
@@ -209,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB212CA21A9FFDE6006F168E /* Microtext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +323,7 @@
 		EB212C9C1A9FFDB1006F168E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -328,12 +333,14 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		EB212C9D1A9FFDB1006F168E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
