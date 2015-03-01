@@ -17,14 +17,12 @@
 //  Copyright (c) 2015 Rodrigo Alves. All rights reserved.
 //
 
+import C
+
 // Extensions to the String class
 extension String {
     func trim() -> String {
         return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
-    }
-    
-    func chartAt(index: Int) -> Character {
-        return self[advance(self.startIndex, index)]
     }
 }
 
@@ -72,7 +70,7 @@ class Microtext {
     }
     
     class func lastName(text: String) -> String {
-        let brokenNames = breakSentence(text);
+        var brokenNames = breakSentence(text);
         
         if brokenNames.count > 1 {
             return brokenNames[brokenNames.count - 1]
@@ -98,23 +96,28 @@ class Microtext {
         return temp
     }
     
-    /**
-    * A function to hide mascarade bad words
-    */
     class func hideBadWord(text: String) -> String {
+        var rand: Int
         var answer = String(text[text.startIndex])
-        let replacements = ["@", "!", "$", "#", "&", "*"];
+        var replacements = ["@", "!", "$", "#", "&", "*"];
+        
+        
         
         for (var i = 1; i < countElements(replacements) - 1; i += 1) {
             let rand = Int(arc4random_uniform(UInt32(replacements.count - 1)))
             
-            if text.chartAt(i) == " " {
-                answer.append(" " as Character)
-            } else {
-                answer.append(replacements[rand].chartAt(0))
-            }
+            //            if String(text[0]) == " " {
+            //                answer.append(" ")
         }
         
-        return answer
+        if (text.[i] === " ") {
+            answer += " ";
+        } else {
+            answer += replacements[rand];
+        }
     }
+    
+    
+    return answer
+}
 }
